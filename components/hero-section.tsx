@@ -256,7 +256,7 @@ export function HeroSection() {
                   className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance leading-tight"
                   variants={fadeInUpVariants}
                 >
-                  Hi, I'm <span className="text-primary">Your Name</span>
+                  Hi, I'm <span className="text-primary">Imalka Dilakshan</span>
                 </motion.h1>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -274,7 +274,7 @@ export function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.65, ease: [0.6, 0.01, 0.05, 0.95] }}
               >
                 Aspiring Software Engineer passionate about building user-focused solutions with modern web
-                technologies. Currently seeking internship opportunities to apply my full-stack development and machine
+                technologies. Currently seeking job opportunities to apply my full-stack development and machine
                 learning skills in real-world projects.
               </motion.p>
 
@@ -326,15 +326,15 @@ export function HeroSection() {
                 transition={{ duration: 0.6, delay: 0.95, ease: [0.6, 0.01, 0.05, 0.95] }}
               >
                 {[
-                  { icon: Linkedin, href: "https://linkedin.com/in/yourprofile", color: "#0A66C2", label: "LinkedIn" },
-                  { icon: Github, href: "https://github.com/yourusername", color: "#181717", label: "GitHub" },
+                  { icon: Linkedin, href: "https://linkedin.com/in/imalka-dilakshan", color: "#0A66C2", label: "LinkedIn" },
+                  { icon: Github, href: "https://github.com/imalkadilakshan99", color: "#181717", label: "GitHub" },
                   {
                     icon: Instagram,
-                    href: "https://instagram.com/yourusername",
+                    href: "https://instagram.com/imalka_dilakshan",
                     color: "#E4405F",
                     label: "Instagram",
                   },
-                  { icon: Mail, href: "mailto:your.email@example.com", color: "#EA4335", label: "Email" },
+                  { icon: Mail, href: "mailto:imalkadilakshan99@gmail.com", color: "#EA4335", label: "Email" },
                 ].map((social, index) => (
                   <motion.a
                     key={social.label}
@@ -412,7 +412,7 @@ export function HeroSection() {
                 >
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-muted to-muted/50 flex items-center justify-center overflow-hidden">
                     <img
-                      src="/professional-developer-portrait-photo.jpg"
+                      src="/professional-developer-portrait-photo.png"
                       alt="Profile"
                       className="w-full h-full object-cover"
                     />

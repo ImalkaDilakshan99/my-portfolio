@@ -135,17 +135,17 @@ export function ContactSection() {
 
               <div className="space-y-3">
                 <motion.a
-                  href="mailto:your.email@example.com"
+                  href="mailto:imalkadilakshan99@gmail.com"
                   className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
                   whileHover={{ x: 5 }}
                   transition={{ duration: 0.2 }}
                 >
                   <Mail className="h-5 w-5 text-primary" />
-                  <span>your.email@example.com</span>
+                  <span>imalkadilakshan99@gmail.com</span>
                 </motion.a>
 
                 <motion.a
-                  href="https://github.com/yourusername"
+                  href="https://github.com/imalkadilakshan99"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
@@ -153,11 +153,11 @@ export function ContactSection() {
                   transition={{ duration: 0.2 }}
                 >
                   <Github className="h-5 w-5 text-primary" />
-                  <span>github.com/yourusername</span>
+                  <span>github.com/imalkadilakshan99</span>
                 </motion.a>
 
                 <motion.a
-                  href="https://linkedin.com/in/yourusername"
+                  href="https://www.linkedin.com/in/imalka-dilakshan"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors"
@@ -165,7 +165,7 @@ export function ContactSection() {
                   transition={{ duration: 0.2 }}
                 >
                   <Linkedin className="h-5 w-5 text-primary" />
-                  <span>linkedin.com/in/yourusername</span>
+                  <span>linkedin.com/in/imalka-dilakshan</span>
                 </motion.a>
               </div>
             </Card>

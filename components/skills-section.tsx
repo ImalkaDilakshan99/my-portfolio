@@ -23,12 +23,17 @@ const skillCategories = [
     skills: [
       { name: "Node.js", color: "#339933", proficiency: 70 },
       { name: "Express", color: "#000000", proficiency: 65 },
+      { name: ".Net", color:"#339933", proficiency: 65},
     ],
   },
   {
     title: "Databases",
     icon: Database,
-    skills: [{ name: "Firebase", color: "#FFCA28", proficiency: 65 }],
+    skills: [
+    { name: "Firebase", color: "#FFCA28", proficiency: 65 },
+    { name: "MongoDB", color: "#FFCA28", proficiency: 65 },
+    { name: "MySql", color: "#FFCA28", proficiency: 65 },
+    ],
   },
   {
     title: "Languages & Tools",
@@ -36,7 +41,9 @@ const skillCategories = [
     skills: [
       { name: "JavaScript", color: "#F7DF1E", proficiency: 80 },
       { name: "TypeScript", color: "#3178C6", proficiency: 70 },
+      { name: "C#", color: "#007396", proficiency: 75 },
       { name: "Java", color: "#007396", proficiency: 75 },
+      { name: "Dart", color: "#007396", proficiency: 75 },
       { name: "Git & GitHub", color: "#F05032", proficiency: 80 },
     ],
   },
@@ -44,8 +51,8 @@ const skillCategories = [
     title: "Mobile Development",
     icon: Smartphone,
     skills: [
-      { name: "Flutter", color: "#02569B", proficiency: 60 },
-      { name: "React Native", color: "#61DAFB", proficiency: 65 },
+      { name: "Flutter", color: "#02569B", proficiency: 75 },
+      { name: "React Native", color: "#61DAFB", proficiency: 60 },
       { name: "Expo", color: "#000020", proficiency: 60 },
     ],
   },
@@ -68,9 +75,9 @@ function ProficiencyBar({ proficiency, delay = 0 }: { proficiency: number; delay
           animate={
             isInView && index < filledSegments
               ? {
-                  opacity: 1,
-                  backgroundColor: "oklch(0.65 0.18 166)",
-                }
+                opacity: 1,
+                backgroundColor: "oklch(0.65 0.18 166)",
+              }
               : { opacity: 0.3 }
           }
           transition={{

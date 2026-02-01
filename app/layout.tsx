@@ -10,7 +10,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Portfolio | Software Engineering Student",
   description:
-    "Personal portfolio of a Software Engineering Student and Aspiring ML Engineer showcasing projects, skills, and experience.",
+    "Personal portfolio of a Aspiring Software Engineer showcasing projects, skills, and experience.",
   generator: "v0.app",
   icons: {
     icon: [

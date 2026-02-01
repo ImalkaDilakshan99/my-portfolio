@@ -9,10 +9,10 @@ const experiences = [
   {
     type: "education",
     title: "Bachelor of Information and Communication Technology",
-    organization: "Your University",
+    organization: "Uva Wellassa University",
     period: "2022 - Present",
     description:
-      "Focused on software engineering fundamentals, data structures, algorithms, and machine learning. Actively engaged in project-based learning and collaborative team assignments.",
+      "Focused on software engineering fundamentals, data structures, algorithms, and oop concepts. Actively engaged in project-based learning and collaborative team assignments.",
     highlights: ["Strong academic performance", "Team collaboration", "Project-based learning"],
   },
   {
@@ -38,7 +38,7 @@ export function ExperienceSection() {
           variants={fadeInUpVariants}
         >
           <h2 className="text-3xl md:text-4xl font-bold">Education & Experience</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">Academic background and hands-on project experience</p>
+          <p className="text-muted-foreground max-w-2xl mx-auto">Academic background and working experience</p>
         </motion.div>
 
         <motion.div

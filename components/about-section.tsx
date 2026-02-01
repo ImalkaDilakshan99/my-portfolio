@@ -24,7 +24,7 @@ export function AboutSection() {
         }}
       >
         <img
-          src="/professional-developer-portrait-photo.jpg"
+          src="/professional-developer-portrait-photo.png"
           alt=""
           className="w-full h-full object-cover grayscale blur-sm"
           aria-hidden="true"
@@ -63,19 +63,19 @@ export function AboutSection() {
             <motion.p className="text-base md:text-lg" variants={scrollRevealVariants}>
               I'm a software engineering student passionate about creating user-focused solutions that solve real
               problems. Currently pursuing my Bachelor of Information and Communication Technology, I combine academic
-              learning with hands-on project experience in web development and machine learning.
+              learning with hands-on project experience in web development and app development.
             </motion.p>
 
             <motion.p className="text-base md:text-lg" variants={scrollRevealVariants}>
-              I thrive on learning new technologies and applying them to practical challenges. From building responsive
-              web applications with React and Next.js to exploring AI algorithms, I approach each project as an
-              opportunity to grow my skills and deliver quality results.
+              I thrive on learning new technologies and applying them to real-world challenges. Whether developing user-focused 
+              digital solutions or exploring intelligent systems, I approach every project as an opportunity to strengthen my skills, 
+              solve problems effectively, and deliver high-quality results.
             </motion.p>
 
             <motion.p className="text-base md:text-lg" variants={scrollRevealVariants}>
-              I'm actively seeking internship opportunities where I can contribute to meaningful projects, collaborate
-              with experienced developers, and continue developing my expertise in full-stack development and machine
-              learning. I bring enthusiasm, adaptability, and a commitment to continuous improvement.
+              I'm actively seeking job opportunities where I can contribute to meaningful projects, collaborate
+              with experienced developers, and continue developing my expertise in full-stack development and app
+              development. I bring enthusiasm, adaptability, and a commitment to continuous improvement.
             </motion.p>
           </motion.div>
         </div>
