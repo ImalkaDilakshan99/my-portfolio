@@ -11,7 +11,7 @@ const certifications = [
     title: "C# for Beginners",
     issuer: "SoloLearn",
     date: "2024",
-    image: "/certification/C%23_for_beginners.jpg",
+    image: "/certification/Csharp_for_beginners.jpg",
   },
   {
     title: "Maximize Productivity With AI Tools",
