@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 export function IntroLoader({ onComplete }: { onComplete: () => void }) {
   const [step, setStep] = useState(0)
   const [typedText, setTypedText] = useState("")
-  const name = "Your Name" // Replace with actual name
+  const name = "Imalka Dilakshan"
   const shouldReduceMotion =
     typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches
 

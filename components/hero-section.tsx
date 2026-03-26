@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { Download, Github, Instagram, Linkedin, Mail } from "lucide-react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { fadeInUpVariants, buttonHoverVariants } from "@/lib/animations"
+import { useTheme } from "next-themes"
 
 // Tech icon components
 const ReactIcon = (props: React.SVGProps<SVGSVGElement>) => (
@@ -204,6 +205,12 @@ export function HeroSection() {
   const opacity = useTransform(scrollYProgress, [0, 0.3], [1, 0])
   const scale = useTransform(scrollYProgress, [0, 0.3], [1, 1.1])
   const [isDownloading, setIsDownloading] = useState(false)
+  const { resolvedTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleDownloadCV = async () => {
     setIsDownloading(true)
@@ -361,7 +368,9 @@ export function HeroSection() {
                     />
                     {React.createElement(social.icon, {
                       className: "h-5 w-5 relative z-10",
-                      style: { color: social.color },
+                      style: {
+                        color: mounted && social.label === "GitHub" && resolvedTheme === "dark" ? "#ffffff" : social.color,
+                      },
                     })}
                   </motion.a>
                 ))}

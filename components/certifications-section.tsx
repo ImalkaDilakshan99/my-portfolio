@@ -8,16 +8,46 @@ import Image from "next/image"
 
 const certifications = [
   {
-    title: "AWS Certified Developer",
-    issuer: "Amazon Web Services",
+    title: "C# for Beginners",
+    issuer: "SoloLearn",
     date: "2024",
-    image: "/aws-certificate-badge.jpg",
+    image: "/certification/C%23_for_beginners.jpg",
   },
   {
-    title: "React Advanced Patterns",
-    issuer: "Frontend Masters",
-    date: "2023",
-    image: "/react-certification-badge.jpg",
+    title: "Maximize Productivity With AI Tools",
+    issuer: "Coursera",
+    date: "2024",
+    image: "/certification/Coursera-Maximize Productivity With AI Tools_page-0001.jpg",
+  },
+  {
+    title: "Java Basic",
+    issuer: "SoloLearn",
+    date: "2024",
+    image: "/certification/java-basic-sololearn.jpg",
+  },
+  {
+    title: "JavaScript Intermediate",
+    issuer: "SoloLearn",
+    date: "2024",
+    image: "/certification/javascript-Intermediate-Sololern.jpg",
+  },
+  {
+    title: "Postman API Certification",
+    issuer: "Postman",
+    date: "2024",
+    image: "/certification/Postman-API-Certification_page-0001.jpg",
+  },
+  {
+    title: "Web Development",
+    issuer: "SoloLearn",
+    date: "2024",
+    image: "/certification/Solo learn WEB.jpg",
+  },
+  {
+    title: "IIT Hackathon",
+    issuer: "Institute of Information Technology",
+    date: "2024",
+    image: "/certification/Imalka Dilakshan-IIT-Hackothon.jpg",
   },
 ]
 
@@ -36,7 +66,7 @@ export function CertificationsSection() {
         </motion.h2>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto"
           initial="hidden"
           whileInView="visible"
           viewport={viewportOptions}
