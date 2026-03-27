@@ -7,9 +7,10 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail, Check, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { fadeInUpVariants, viewportOptions, slideInLeftVariants, slideInRightVariants } from "@/lib/animations"
+import emailjs from "emailjs-com"
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -20,22 +21,33 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
-      console.log("Form submitted:", formData)
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      )
+
       setIsSubmitting(false)
       setIsSuccess(true)
       setFormData({ name: "", email: "", message: "" })
 
-      // Reset success message after 3 seconds
       setTimeout(() => setIsSuccess(false), 3000)
-    }, 1500)
+    } catch (error) {
+      console.error("Full error:", error)
+      console.error("Stringified:", JSON.stringify(error))
+      setIsSubmitting(false)
+    }
   }
-
   return (
     <section id="contact" className="py-24">
       <div className="container mx-auto px-4">
@@ -179,6 +191,58 @@ export function ContactSection() {
             </Card>
           </motion.div>
         </div>
+
+        {/* Success Modal */}
+        <AnimatePresence>
+          {isSuccess && (
+            <>
+              {/* Overlay */}
+              <motion.div
+                className="fixed inset-0 bg-black/50 z-40"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2 }}
+              />
+
+              {/* Modal */}
+              <motion.div
+                className="fixed top-1/2 left-1/2 z-50 w-full max-w-sm"
+                initial={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
+                animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
+                exit={{ opacity: 0, scale: 0.8, x: "-50%", y: "-50%" }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+              >
+                <Card className="p-8 border-border bg-card shadow-2xl">
+                  <div className="flex flex-col items-center text-center">
+                    {/* Success Icon */}
+                    <motion.div
+                      className="mb-4 p-3 bg-green-500/20 rounded-full"
+                      animate={{ scale: [1, 1.1, 1] }}
+                      transition={{ duration: 0.6, ease: "easeInOut" }}
+                    >
+                      <Check className="h-8 w-8 text-green-500" />
+                    </motion.div>
+
+                    {/* Message */}
+                    <h3 className="text-2xl font-bold mb-2">Success!</h3>
+                    <p className="text-muted-foreground mb-6">
+                      Your message has been sent successfully. I'll get back to you soon!
+                    </p>
+
+                    {/* Close Button */}
+                    <Button
+                      onClick={() => setIsSuccess(false)}
+                      className="w-full"
+                    >
+                      Continue
+                    </Button>
+                  </div>
+                </Card>
+              </motion.div>
+            </>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   )
