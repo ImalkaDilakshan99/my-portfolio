@@ -16,13 +16,12 @@ const experiences = [
     highlights: ["Strong academic performance", "Team collaboration", "Project-based learning"],
   },
   {
-    type: "project",
-    title: "Student Developer & Project Contributor",
-    organization: "Academic & Personal Projects",
-    period: "2022 - Present",
-    description:
-      "Built full-stack web applications, desktop software, and contributed to open-source projects. Gained hands-on experience with modern development tools and workflows.",
-    highlights: ["Web development", "Desktop applications", "Version control"],
+    type: "internship",
+    title: "Mobile App Development Intern",
+    organization: "Hanetz IT Innovations (PVT)",
+    period: "Aug 2025 - Dec 2025",
+    description: "Built and optimized Flutter mobile applications, improving app performance by ~20%. Integrated RESTful APIs for secure and scalable backend communication. Collaborated in an Agile team, contributing to feature development and sprint deliveries. Identified and fixed bugs, reducing crash/issue rates by ~15%. Wrote clean, maintainable code following Flutter best practices.",
+    highlights: ["Mobile App development", "Flutter applications", "Version control"],
   },
 ]
 

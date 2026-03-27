@@ -9,14 +9,32 @@ import Image from "next/image"
 
 const projects = [
   {
-    title: "Community Platform",
+    title: "Portfolio Website",
     description:
-      "University community web platform featuring user profiles, discussion forums, and real-time messaging to connect students and facilitate collaboration.",
-    tech: ["React", "Next.js", "Node.js", "Firebase"],
-    highlights: ["Real-time chat", "User authentication", "Responsive design"],
-    liveUrl: "#",
-    githubUrl: "#",
-    image: "/modern-community-platform-dashboard-interface.jpg",
+      "Modern, responsive portfolio showcasing projects and skills with smooth animations, dark mode support, and performance optimization.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
+    highlights: ["Framer Motion", "SEO optimized", "Accessibility focused"],
+    liveUrl: "https://imalka.netlify.app/",
+    githubUrl: "https://github.com/ImalkaDilakshan99/my-portfolio",
+    image: "/projects/portfolio.png",
+  },
+  {
+    title: "Movie App",
+    description:
+      "Cross-platform Flutter application that allows users to browse, search, and discover popular and upcoming movies using the TMDB API. The app follows Clean Architecture principles and uses Riverpod for scalable state management, with a modern UI featuring infinite scrolling and dark mode support.",
+    tech: ["Flutter", "Dart", "REST APIs", "Riverpod", "Mobile Application Development", "Cross-Platform App Development"],
+    highlights: ["Infinite scrolling", "Dark mode support", "Clean Architecture", "TMDB API integration"],
+    githubUrl: "https://github.com/ImalkaDilakshan99/Movie-app",
+    image: "/projects/Movie_app_poster.png",
+  },
+  {
+    title: "To-Do Application",
+    description:
+      "Cross-platform To-Do mobile application using React Native (Expo) with a real-time backend powered by Convex. Features full CRUD operations, real-time data synchronization, light & dark mode with persistent user preferences, task progress tracking, and smooth animations for both iOS and Android platforms.",
+    tech: ["React Native", "Expo", "TypeScript", "Convex", "Expo Router", "Async Storage"],
+    highlights: ["Full CRUD operations", "Real-time sync", "Light & Dark mode", "Task progress tracking", "Responsive design", "Smooth animations"],
+    githubUrl: "https://github.com/ImalkaDilakshan99/To-Do-App_rn",
+    image: "/projects/todo_app.png",
   },
   {
     title: "Travel Budget Planner",
@@ -24,18 +42,8 @@ const projects = [
       "JavaFX desktop application for travel expense management with budget forecasting, expense categorization, and visual analytics reports.",
     tech: ["Java", "JavaFX"],
     highlights: ["Data visualization", "Budget forecasting", "Expense tracking"],
-    githubUrl: "#",
+    githubUrl: "https://github.com/ImalkaDilakshan99/TravelBudgetPlanner",
     image: "/travel-budget-planning-app-with-charts.jpg",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "Modern, responsive portfolio showcasing projects and skills with smooth animations, dark mode support, and performance optimization.",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS"],
-    highlights: ["Framer Motion", "SEO optimized", "Accessibility focused"],
-    liveUrl: "#",
-    githubUrl: "#",
-    image: "/modern-developer-portfolio-website.jpg",
   },
 ]
 
