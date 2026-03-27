@@ -250,8 +250,21 @@ export function HeroSection() {
 
   const handleDownloadCV = async () => {
     setIsDownloading(true)
-    await new Promise((resolve) => setTimeout(resolve, 1000))
-    setIsDownloading(false)
+
+    // create download link
+    const link = document.createElement("a")
+    link.href = "/cv.pdf"
+    link.download = "Imalka-CV.pdf"
+
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+
+    // simulate small delay for animation UX
+    setTimeout(() => {
+      setIsDownloading(false)
+      alert("CV downloaded successfully!")
+    }, 1000)
   }
 
   return (

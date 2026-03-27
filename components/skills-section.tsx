@@ -23,16 +23,16 @@ const skillCategories = [
     skills: [
       { name: "Node.js", color: "#339933", proficiency: 70 },
       { name: "Express", color: "#000000", proficiency: 65 },
-      { name: ".Net", color:"#339933", proficiency: 65},
+      { name: ".Net", color: "#339933", proficiency: 65 },
     ],
   },
   {
     title: "Databases",
     icon: Database,
     skills: [
-    { name: "Firebase", color: "#FFCA28", proficiency: 65 },
-    { name: "MongoDB", color: "#FFCA28", proficiency: 65 },
-    { name: "MySql", color: "#FFCA28", proficiency: 65 },
+      { name: "Firebase", color: "#FFCA28", proficiency: 65 },
+      { name: "MongoDB", color: "#FFCA28", proficiency: 65 },
+      { name: "MySql", color: "#FFCA28", proficiency: 65 },
     ],
   },
   {
@@ -129,6 +129,15 @@ export function SkillsSection() {
               The more you learn, the more you realize how much you don't know
             </p>
             <footer className="text-sm md:text-base text-muted-foreground/70 font-medium">— Albert Einstein</footer>
+            <motion.div
+              className="absolute -top-4 -right-4 text-5xl md:text-6xl text-primary/20 font-serif"
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              "
+            </motion.div>
           </blockquote>
         </motion.div>
 
