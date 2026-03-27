@@ -20,10 +20,12 @@ export function ContactSection() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
+  const [isError, setIsError] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setIsError(false)
 
     try {
       await emailjs.send(
@@ -46,6 +48,10 @@ export function ContactSection() {
       console.error("Full error:", error)
       console.error("Stringified:", JSON.stringify(error))
       setIsSubmitting(false)
+      setIsError(true) // Set error state to show the user something went wrong
+
+      // Auto-hide error message after 5 seconds
+      setTimeout(() => setIsError(false), 5000)
     }
   }
   return (
@@ -113,6 +119,10 @@ export function ContactSection() {
                             className="inline-block h-4 w-4 border-2 border-background border-t-transparent rounded-full"
                           />
                           Sending...
+                        </motion.span>
+                      ) : isError ? (
+                        <motion.span key="error" className="text-red-400 flex items-center gap-2">
+                          <X className="h-4 w-4" /> Try Again
                         </motion.span>
                       ) : isSuccess ? (
                         <motion.span
