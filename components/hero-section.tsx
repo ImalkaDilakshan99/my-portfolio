@@ -44,18 +44,53 @@ const GitIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 )
 
+const FlutterIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 256 317" fill="currentColor" {...props}>
+    <path d="M156.8 0L0 156.8l48 48L252.8 0h-96zM0 252.8l48 48 108.8-108.8-48-48L0 252.8zm108.8 0l48 48 96-96-48-48-96 96z" />
+  </svg>
+)
+
+const ExpoIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 256 256" fill="currentColor" {...props}>
+    <path d="M128 0L0 221.7h256L128 0zm0 45.3l84.7 146.4H43.3L128 45.3z" />
+  </svg>
+)
+
+const CSharpIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 256 256" fill="currentColor" {...props}>
+    <path d="M128 0L0 73.9v108.2L128 256l128-73.9V73.9L128 0zm0 29.5l96 55.4v85.2l-96 55.4-96-55.4V84.9l96-55.4zm-27.3 128.6c-18.2 0-31.3-12.6-31.3-30.1s13.1-30.1 31.3-30.1c11.5 0 20.1 5.6 24.7 14.7l-10.8 6.2c-2.6-5.1-7.3-8.3-13.9-8.3-10.1 0-17 7.3-17 17.5s6.9 17.5 17 17.5c6.6 0 11.4-3.2 14-8.3l10.8 6.2c-4.6 9.1-13.2 14.7-24.8 14.7z" />
+  </svg>
+)
+
+const DotNetIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 256 256" fill="currentColor" {...props}>
+    <circle cx="128" cy="128" r="120" />
+    <text x="50%" y="55%" textAnchor="middle" fontSize="80" fill="white" dy=".3em">
+      .NET
+    </text>
+  </svg>
+)
+
+const UnityIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M14.5 1L0 6.5v11L14.5 23l14.5-5.5v-11L14.5 1m0 2.5l10.5 4v8L14.5 20l-10.5-4v-8L14.5 3.5m-3 5.5L14.5 14l3.5-5-3.5-5-3.5 5m-3 0L11.5 14l3.5-5-3.5-5-3.5 5m6 0L14.5 14l3.5-5-3.5-5-3.5 5" />
+  </svg>
+)
+
 function FloatingIcon({
   icon: Icon,
   delay = 0,
   radius = 200,
   duration = 25,
   className = "",
+  color = "#34D399",
 }: {
   icon: React.ElementType
   delay?: number
   radius?: number
   duration?: number
   className?: string
+  color?: string
 }) {
   return (
     <motion.div
@@ -100,16 +135,17 @@ function FloatingIcon({
       }}
     >
       <motion.div
-        className="backdrop-blur-xl bg-primary/10 border border-primary/30 rounded-2xl p-3 shadow-2xl"
+        className="backdrop-blur-xl border rounded-2xl p-3 shadow-2xl"
         style={{
-          boxShadow:
-            "0 0 30px rgba(52, 211, 153, 0.3), 0 0 60px rgba(52, 211, 153, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.15)",
+          backgroundColor: `${color}20`,
+          borderColor: `${color}80`,
+          boxShadow: `0 0 30px ${color}4d, 0 0 60px ${color}26, inset 0 2px 4px rgba(255, 255, 255, 0.15)`,
         }}
         animate={{
           boxShadow: [
-            "0 0 30px rgba(52, 211, 153, 0.3), 0 0 60px rgba(52, 211, 153, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.15)",
-            "0 0 40px rgba(52, 211, 153, 0.5), 0 0 80px rgba(52, 211, 153, 0.25), inset 0 2px 4px rgba(255, 255, 255, 0.2)",
-            "0 0 30px rgba(52, 211, 153, 0.3), 0 0 60px rgba(52, 211, 153, 0.15), inset 0 2px 4px rgba(255, 255, 255, 0.15)",
+            `0 0 30px ${color}4d, 0 0 60px ${color}26, inset 0 2px 4px rgba(255, 255, 255, 0.15)`,
+            `0 0 40px ${color}80, 0 0 80px ${color}40, inset 0 2px 4px rgba(255, 255, 255, 0.2)`,
+            `0 0 30px ${color}4d, 0 0 60px ${color}26, inset 0 2px 4px rgba(255, 255, 255, 0.15)`,
           ],
         }}
         transition={{
@@ -119,7 +155,7 @@ function FloatingIcon({
           delay: delay * 0.3,
         }}
       >
-        <Icon className="h-6 w-6 md:h-8 md:w-8 text-primary drop-shadow-lg" />
+        <Icon className="h-6 w-6 md:h-8 md:w-8 drop-shadow-lg" style={{ color }} />
       </motion.div>
     </motion.div>
   )
@@ -429,17 +465,25 @@ export function HeroSection() {
                 </motion.div>
 
                 <div className="md:hidden">
-                  <FloatingIcon icon={ReactIcon} delay={0} radius={110} duration={30} />
-                  <FloatingIcon icon={JavaScriptIcon} delay={(2 * Math.PI) / 3} radius={110} duration={30} />
-                  <FloatingIcon icon={NodeJSIcon} delay={(4 * Math.PI) / 3} radius={110} duration={30} />
+                  <FloatingIcon icon={ReactIcon} delay={0} radius={110} duration={30} color="#61DAFB" />
+                  <FloatingIcon icon={JavaScriptIcon} delay={(2 * Math.PI) / 3} radius={110} duration={30} color="#F7DF1E" />
+                  <FloatingIcon icon={NodeJSIcon} delay={(4 * Math.PI) / 3} radius={110} duration={30} color="#339933" />
+                  <FloatingIcon icon={FlutterIcon} delay={0} radius={110} duration={35} color="#02569B" />
+                  <FloatingIcon icon={CSharpIcon} delay={Math.PI} radius={110} duration={35} color="#239120" />
+                  <FloatingIcon icon={UnityIcon} delay={(2 * Math.PI) / 5} radius={110} duration={35} color="#FFFFFF" />
                 </div>
                 <div className="hidden md:block">
-                  <FloatingIcon icon={ReactIcon} delay={0} radius={180} duration={25} />
-                  <FloatingIcon icon={NextJSIcon} delay={Math.PI / 3} radius={180} duration={25} />
-                  <FloatingIcon icon={JavaScriptIcon} delay={(2 * Math.PI) / 3} radius={180} duration={25} />
-                  <FloatingIcon icon={JavaIcon} delay={Math.PI} radius={180} duration={25} />
-                  <FloatingIcon icon={NodeJSIcon} delay={(4 * Math.PI) / 3} radius={180} duration={25} />
-                  <FloatingIcon icon={GitIcon} delay={(5 * Math.PI) / 3} radius={180} duration={25} />
+                  <FloatingIcon icon={ReactIcon} delay={0} radius={180} duration={25} color="#61DAFB" />
+                  <FloatingIcon icon={NextJSIcon} delay={(Math.PI / 5)} radius={180} duration={25} color="#000000" />
+                  <FloatingIcon icon={JavaScriptIcon} delay={(2 * Math.PI) / 5} radius={180} duration={25} color="#F7DF1E" />
+                  <FloatingIcon icon={JavaIcon} delay={(3 * Math.PI) / 5} radius={180} duration={25} color="#007396" />
+                  <FloatingIcon icon={NodeJSIcon} delay={(4 * Math.PI) / 5} radius={180} duration={25} color="#339933" />
+                  <FloatingIcon icon={GitIcon} delay={Math.PI} radius={180} duration={25} color="#F05032" />
+                  <FloatingIcon icon={FlutterIcon} delay={(6 * Math.PI) / 5} radius={180} duration={25} color="#02569B" />
+                  <FloatingIcon icon={ExpoIcon} delay={(7 * Math.PI) / 5} radius={180} duration={25} color="#4630EB" />
+                  <FloatingIcon icon={CSharpIcon} delay={(8 * Math.PI) / 5} radius={180} duration={25} color="#239120" />
+                  <FloatingIcon icon={DotNetIcon} delay={(9 * Math.PI) / 5} radius={180} duration={25} color="#512BD4" />
+                  <FloatingIcon icon={UnityIcon} delay={(10 * Math.PI) / 5} radius={180} duration={25} color="#FFFFFF" />
                 </div>
               </div>
             </motion.div>
